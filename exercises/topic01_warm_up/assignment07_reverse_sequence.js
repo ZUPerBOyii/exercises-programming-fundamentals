@@ -20,4 +20,11 @@ that outputs them in reverse order.
     1
 */
 import io from "../../utils/io-for-pf.js";
+let a, b, c, d, e;
+a = io.read();
+b = io.read();
+c = io.read();
+d = io.read();
+e = io.read();
 
+io.write(e + d + c + b + a);

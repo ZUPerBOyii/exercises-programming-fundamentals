@@ -22,6 +22,8 @@ let a = parseInt(io.read()); // do not remove this line
 let b = parseInt(io.read()); // do not remove this line
 
 // Write your program below:
+a = a + b - a;
+b = b + a - b;
 // Write your program above.
 
 io.write(a); // do not (re)move this line

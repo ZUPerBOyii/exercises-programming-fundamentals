@@ -13,3 +13,7 @@ to a string using `toFixed`(inverse of parseFloat). Turning π into the string
 
 */
 import io from "../../utils/io-for-pf.js";
+let radius = parseFloat(io.read());
+let area = radius * radius * Math.PI;
+
+io.write(area.toFixed(3));

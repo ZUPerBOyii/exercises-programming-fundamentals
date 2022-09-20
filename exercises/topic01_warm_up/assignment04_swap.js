@@ -16,6 +16,9 @@ let a = io.read(); // do not (re)move this line
 let b = io.read(); // do not (re)move this line
 
 // Write your program below:
+let c = b;
+b = a;
+a = c;
 // Write your program above.
 
 io.write(a); // do not (re)move this line

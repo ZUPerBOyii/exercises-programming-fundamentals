@@ -14,3 +14,11 @@ Make a program print `odd` or `even` depending on the input (`int`).
     odd
 */
 import io from "../../utils/io-for-pf.js";
+let a = parseInt(io.read());
+let b = a % 2;
+
+if (b === 0){
+  io.write("Even");
+}else{
+  io.write("Odd");
+}

@@ -22,3 +22,13 @@ your program behaves unexpectedly.
     not equal
 */
 import io from "../../utils/io-for-pf.js";
+let a = parseFloat(io.read());
+let b = parseFloat(io.read());    // we need to use floats in an if statement, but that can't work :(
+
+let c = a + b;
+
+if (c === 0.3){    // Floats cannot be a 100% precise
+  io.write("Equal");
+}else{
+  io.write("Not equal");
+}

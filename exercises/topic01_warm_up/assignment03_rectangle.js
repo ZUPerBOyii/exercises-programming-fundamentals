@@ -13,4 +13,6 @@ The rectangle should be 3 rows high and has a width of 4.
     ****
 */
 import io from "../../utils/io-for-pf.js";
-
+io.write("****");
+io.write("****");
+io.write("****");
