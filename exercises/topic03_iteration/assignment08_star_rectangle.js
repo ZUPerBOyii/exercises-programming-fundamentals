@@ -15,4 +15,11 @@ The program has no output if either the height or the width is negative  or zero
     ***
 */
 import io from "../../utils/io-for-pf.js";
+let width = parseInt(io.read());
+let height = parseInt(io.read());
+let str = "*";
 
+for (let i = 1; i <= height; i++){
+  str *= width;
+  io.write(str);
+}
