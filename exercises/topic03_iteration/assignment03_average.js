@@ -21,3 +21,14 @@ Your program should print `no data` if the first input was a zero.
 */
 import io from "../../utils/io-for-pf.js";
 
+let input;
+let total = 0;
+let amountOfInputs = 0;
+
+do {
+  input = parseFloat(io.read());
+  total += input;
+  amountOfInputs += 1;
+}while (input !== 0);
+amountOfInputs -= 1;
+io.write(total / amountOfInputs);
