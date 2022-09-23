@@ -11,4 +11,8 @@ all numbers (line by line) from 1 through the entered number (included)
     3
 */
 import io from "../../utils/io-for-pf.js";
+let input = parseInt(io.read());
 
+for (let i = 1; i <= input; i++){
+  io.write(i);
+}
