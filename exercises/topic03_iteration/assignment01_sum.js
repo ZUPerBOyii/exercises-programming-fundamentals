@@ -20,4 +20,13 @@ to a string using `toFixed`(inverse of parseFloat). Turning π into the string
 
 */
 import io from "../../utils/io-for-pf.js";
+let a;
+let b = 0;
+
+do {
+  a = parseFloat(io.read());
+  b += a;
+}while(a !== 0);
+io.write(b);
+
 
