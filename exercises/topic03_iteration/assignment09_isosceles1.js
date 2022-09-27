@@ -22,3 +22,17 @@ height until a positive number is entered.
 */
 import io from "../../utils/io-for-pf.js";
 
+let input = parseInt(io.read());
+let str = "*";
+
+
+while(input <= 0){
+  input = parseInt(io.read());
+}
+
+for(let i = 1; i <= input; i++){
+  io.write(str.repeat(i));
+}
+
+
+
