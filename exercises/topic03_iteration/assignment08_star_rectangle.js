@@ -20,6 +20,6 @@ let height = parseInt(io.read());
 let str = "*";
 
 for (let i = 1; i <= height; i++){
-  str *= width;
-  io.write(str);
+  io.write(str.repeat(width));
 }
+
