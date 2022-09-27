@@ -15,3 +15,14 @@ This time the triangle is left aligned and has its top at the bottom.
 */
 import io from "../../utils/io-for-pf.js";
 
+let input = parseInt(io.read());
+let str = "*";
+
+
+while(input <= 0){
+  input = parseInt(io.read());
+}
+
+for(let i = input; i >= 1; i--){
+  io.write(str.repeat(i));
+}
