@@ -20,3 +20,19 @@ Watch out, not all triangles have a top with 1 star. Some have two stars.
 */
 import io from "../../utils/io-for-pf.js";
 
+let input = parseInt(io.read());
+let str = "*";
+let amountOfSpaces = input;
+let spaces = " ";
+
+
+while(input <= 0){
+  input = parseInt(io.read());
+}
+
+
+for(let i = 1; i <= input; i += 2) {
+  amountOfSpaces -= 1;
+  io.write(spaces.repeat(amountOfSpaces) + str.repeat(i));
+
+}
