@@ -23,4 +23,7 @@ assignment.
     -7
 */
 import io from "../../utils/io-for-pf.js";
+let a = parseInt(io.read());
+
+
 
