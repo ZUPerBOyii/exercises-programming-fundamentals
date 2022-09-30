@@ -9,4 +9,17 @@ Print out the largest divisor that both numbers have in common
     https://nl.wikipedia.org/wiki/Algoritme_van_Euclides#Het_algoritme
 */
 import io from "../../utils/io-for-pf.js";
+let a = parseInt(io.read());
+let b = parseInt(io.read());
+
+a = Math.abs(a);
+b = Math.abs(b);
+
+while(b){
+  let c = b;
+  b = a % b;
+  a = c;
+}
+io.write(a);
+
 
