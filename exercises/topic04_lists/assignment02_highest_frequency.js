@@ -38,4 +38,15 @@ If multiple numbers apply, print the smallest.
     -1
 */
 import io from "../../utils/io-for-pf.js";
+let input;
+let counter = 0;
+let numbers = new Array();
+do {
+  input = parseInt(io.read());
+  numbers[counter] = input;
+  counter++;
+
+} while (input >= 0 && input <= 99)
+
+
 
