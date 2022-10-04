@@ -15,7 +15,7 @@ let b = parseInt(io.read());
 a = Math.abs(a);
 b = Math.abs(b);
 
-while(b){
+while(b !== 0){
   let c = b;
   b = a % b;
   a = c;

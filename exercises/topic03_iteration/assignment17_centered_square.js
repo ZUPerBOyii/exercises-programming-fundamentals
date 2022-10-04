@@ -34,3 +34,18 @@ These are the three smallest possible squares:
 */
 import io from "../../utils/io-for-pf.js";
 
+let input = parseInt(io.read());
+let str = "+";
+let center = "o";
+let space = " ";
+
+for (let i = 1; i <= input; i++){
+  io.write(str.repeat(input));
+}
+
+
+
+
+
+
+
