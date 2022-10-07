@@ -1,5 +1,5 @@
 /*
-# Centered Square (parial exam)
+# Centered Square (partial exam)
 
 Create a JavaScript program that prints a square.
 The edges should be pluses (`+`) and in the exact center,
@@ -34,10 +34,19 @@ These are the three smallest possible squares:
 */
 import io from "../../utils/io-for-pf.js";
 
+
+
 let input = parseInt(io.read());
+let number = 0;
 let str = "+";
 let center = "o";
 let space = " ";
+
+while(number === 0){
+  input = parseInt(io.read());
+  number = input % 2;
+}
+
 
 for (let i = 1; i <= input; i++){
   io.write(str.repeat(input));
