@@ -36,21 +36,22 @@ import io from "../../utils/io-for-pf.js";
 
 
 
-let input = parseInt(io.read());
-let number = 0;
-let str = "+";
-let center = "o";
-let space = " ";
+const size = 7;
+let str = "";
 
-while(number === 0){
-  input = parseInt(io.read());
-  number = input % 2;
+for (let row = 0; row < size; row++) {
+  str += "+";
+}
+for (let col = 0; col < size; col++){
+  io.write(str);
 }
 
 
-for (let i = 1; i <= input; i++){
-  io.write(str.repeat(input));
-}
+
+
+
+
+
 
 
 
