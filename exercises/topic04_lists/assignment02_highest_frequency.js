@@ -38,15 +38,26 @@ If multiple numbers apply, print the smallest.
     -1
 */
 import io from "../../utils/io-for-pf.js";
-let input;
-let counter = 0;
-let numbers = new Array();
-do {
-  input = parseInt(io.read());
-  numbers[counter] = input;
-  counter++;
-
-} while (input >= 0 && input <= 99)
 
 
+const frequencyOf = new Array(100).fill(0);
+let number = parseInt(io.read());
 
+while (0 <= number && number < frequencyOf.length){
+  frequencyOf[number]++;
+  number = parseInt(io.read());
+}
+
+let firstNumberWithHighestFrequency = 0;
+for (let number = 1; number < frequencyOf.length; number++){
+  if (frequencyOf[number] > frequencyOf[firstNumberWithHighestFrequency]){
+    firstNumberWithHighestFrequency = number;
+  }
+}
+
+if (frequencyOf[firstNumberWithHighestFrequency] === 0){
+  io.write(-1);
+
+} else{
+  io.write(firstNumberWithHighestFrequency);
+}

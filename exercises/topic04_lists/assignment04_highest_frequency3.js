@@ -38,3 +38,25 @@ Print all numbers that apply (small to large).
 */
 import io from "../../utils/io-for-pf.js";
 
+const frequencyOf = new Array(100).fill(0);
+let number = parseInt(io.read());
+while(0 <= number && number < frequencyOf.length) {
+  frequencyOf[number]++; //frequencyOf[number] = frequencyOf[number] + 1;
+  number = parseInt(io.read());
+}
+
+let highestFrequencyNumbers = [0];
+for(let number=1; number < frequencyOf.length; number++) {
+  if(frequencyOf[number] === frequencyOf[highestFrequencyNumbers[0]]) {
+    highestFrequencyNumbers.push(number);
+  }
+  if(frequencyOf[number] > frequencyOf[highestFrequencyNumbers[0]]) {
+    highestFrequencyNumbers = [];
+    highestFrequencyNumbers.push(number);
+  }
+}
+
+if(frequencyOf[highestFrequencyNumbers[0]] === 0)
+  io.write(-1);
+else
+  io.write(highestFrequencyNumbers);
