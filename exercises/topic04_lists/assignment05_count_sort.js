@@ -31,14 +31,8 @@ while(number >= 0 && number < frequencyOf.length) {
   number = parseInt(io.read());
 }
 
-for (let i = 0; i < frequencyOf.length; i++){
-  if (frequencyOf[i] === 1){
-    io.write(frequencyOf[i] + i - 1);
-  }
-  else if (frequencyOf[i] > 1){
-    io.write(frequencyOf[i] - i);
+for (let i = 0; i < frequencyOf.length; i++) {
+  if (frequencyOf[i] !== 0) {
+    io.write(i);
   }
 }
-
-
-
