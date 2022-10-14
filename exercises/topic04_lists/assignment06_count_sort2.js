@@ -26,3 +26,21 @@ Numbers that were entered multiple times are printed multiple times.
 */
 import io from "../../utils/io-for-pf.js";
 
+const frequencyOf = new Array(100).fill(0);
+let number = parseInt(io.read());
+
+while (number >= 0 && number < frequencyOf.length) {
+  frequencyOf[number]++; //frequencyOf[number] = frequencyOf[number] + 1;
+  number = parseInt(io.read());
+}
+
+for (let i = 0; i < frequencyOf.length; i++) {
+  if (frequencyOf[i] === 1) {
+    io.write(i);
+  } else if (frequencyOf[i] > 1) {
+    for (let j = 0; j < frequencyOf[i]; j++)
+      io.write(i);
+  }
+
+
+}

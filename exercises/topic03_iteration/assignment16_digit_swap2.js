@@ -24,21 +24,20 @@ assignment.
 */
 import io from "../../utils/io-for-pf.js";
 
-let a = parseInt(io.read());    //We make an int
-let rightDigit = 0;             // we want a right digit out of the input
-let sign = 1;                   // we save the sign
+let n = parseInt(io.read());
 
-if (a < 0){                      //we save the sign
+let sign = 1;
+if(n < 0) {
   sign = -1;
-  a = sign * a;
+  n = -n;
 }
 
-if (a >= 10){        //check if the input is between the required range
-  rightDigit = a % 10;          // get the right digit
-  a = Math.floor(a / 10);     // get the left digit
-  rightDigit *= 10;             //right digit needs to become the left digit
-  io.write( sign * (rightDigit + a));       //cout this with the sign
-
-}else{
-  io.write(a * sign);     //if not in range, write it normally
+let reverse = 0;
+while(n > 0) {
+  const lastDigit = n % 10;
+  reverse = reverse * 10 + lastDigit;
+  n = Math.floor(n / 10);
 }
+reverse *= sign;
+
+io.write(reverse);
