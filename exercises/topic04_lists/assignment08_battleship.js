@@ -62,7 +62,7 @@ const b = [
   [_, _, _, _, _, _, _, _, _, _]
 ];
 
-const successfulHits = [];
+const  f = [];
 const totalAttacks = [];
 const amountOfVessels = [];
 
