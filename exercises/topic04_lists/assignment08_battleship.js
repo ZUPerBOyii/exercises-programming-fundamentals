@@ -61,3 +61,23 @@ const b = [
   [_, _, _, _, _, _, _, _, _, _],
   [_, _, _, _, _, _, _, _, _, _]
 ];
+
+const successfulHits = [];
+const totalAttacks = [];
+const amountOfVessels = [];
+
+for (let i = 0; i < a.length; i++){
+  for (let j = 0; j < b.length; j++){
+    if (b[i][j] === X || b[i][j] === O){
+      totalAttacks.push(1);
+      if (a[i][j] === A && b[i][j] === X){
+        successfulHits.push(1);
+      }
+    }
+    if (a[i][j] === A || a[i][j] === B){
+      amountOfVessels.push(1);
+    }
+  }
+}
+io.write("Efficiency: " + successfulHits.length / totalAttacks.length);
+io.write("Damage: " + successfulHits.length / amountOfVessels.length);
