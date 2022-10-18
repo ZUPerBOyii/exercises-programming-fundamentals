@@ -7,3 +7,17 @@ Your program should print `does not compute` when a negative number is entered.
 */
 import io from "../../utils/io-for-pf.js";
 
+let input = parseInt(io.read());
+
+
+if (input <= 0){
+  io.write("Does not compute");
+}
+if (input === 1){
+  io.write(input);
+}
+
+for (let i = input - 1; i >= 1; i--){
+  input = input * i;
+}
+io.write(input);

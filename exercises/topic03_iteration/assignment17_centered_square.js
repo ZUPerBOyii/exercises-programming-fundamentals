@@ -36,26 +36,28 @@ import io from "../../utils/io-for-pf.js";
 
 
 
-const size = 7;
-let str = "";
+let size = parseInt(io.read());
+
+while (size < 3 || (size % 2) === 0) {
+  size = parseInt(io.read());
+}
+
+
+
+const first = 0;
+const mid = (size - 1 ) / 2;
+const last = size - 1;
 
 for (let row = 0; row < size; row++) {
-  str += "+";
+  let line = "";
+  for (let col = 0; col < size; col++) {
+    if (row === first || row === last  || col === first || col === last) {
+      line += "+";
+    } else if ( row === mid && col === mid ) {
+      line += "o";
+    } else {
+      line += " ";
+    }
+  }
+  io.write(line);
 }
-for (let col = 0; col < size; col++){
-  io.write(str);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
