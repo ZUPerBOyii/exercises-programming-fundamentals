@@ -28,3 +28,73 @@ Your tests should still succeed:
 
 
 export { gcd, swapDigits, factorial, variation, avg, largestPrime };
+
+let a;
+let b;
+
+function gcd(a, b){
+  a = Math.abs(a);
+  b = Math.abs(b);
+
+  while(b !== 0){
+    let c = b;
+    b = a % b;
+    a = c;
+  }
+  return a;
+}
+
+function swapDigits(a, b){
+
+  let rightDigit = 0;             // we want a right digit out of the input
+  let sign = 1;                   // we save the sign
+
+  if (a < 0){                      //we save the sign
+    sign = -1;
+    a = sign * a;
+  }
+
+  if (a >= 10 && a <= 99){        //check if the input is between the required range
+    rightDigit = a % 10;          // get the right digit
+    a = Math.floor(a / 10);     // get the left digit
+    rightDigit *= 10;             //right digit needs to become the left digit
+    return sign * (rightDigit + a);    //cout this with the sign
+  }else{
+    return(a * sign);     //if not in range, write it normally
+  }
+}
+
+function factorial(a){
+  if (a <= 0){
+    return("Does not compute");
+  }
+  if (a === 1){
+    return(a);
+  }
+
+  for (let i = a - 1; i >= 1; i--){
+    a = a * i;
+  }
+  return(a);
+}
+
+function variation(){
+  // nothing yet
+}
+
+function avg(){
+  let total = 0;
+  let amountOfInputs = 0;
+
+  do {
+    a = 5;
+    total += a;
+    amountOfInputs += 1;
+  }while (a !== 0);
+  amountOfInputs -= 1;
+  return(total / amountOfInputs);
+}
+
+function largestPrime(){
+  //no idea which one's largest Prime
+}

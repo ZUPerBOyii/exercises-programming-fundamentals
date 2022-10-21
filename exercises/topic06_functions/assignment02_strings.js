@@ -23,6 +23,8 @@ handy, since the `trim` function should remove all leading and trailing whitespa
 but should the whitespaces in between.
 */
 
+
+
 function isWhitespace (ch) {
   return ch === " " || ch === "\t" || ch === "\r" || ch === "\n";
 }
@@ -49,3 +51,40 @@ export {
 
   substring
 };
+
+
+function isDigit(a){
+  a = a / 1;
+
+  if (a !== a){
+    return false;
+  }else{
+    return true;
+  }
+
+}
+
+function toUpper(a){
+  a.toUpperCase();
+}
+
+function toLower(){
+
+}
+
+function isAlpha(){
+
+}
+
+function isInt(){
+
+}
+
+function trim(){
+
+}
+
+function substring(){
+
+}
+
