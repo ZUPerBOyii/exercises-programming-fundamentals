@@ -37,3 +37,24 @@ exercise after the fall break.
 */
 import io from "../../utils/io-for-pf.js";
 
+let input = parseInt(io.read());
+let currentNumber = 0;
+
+
+
+for (let row = 1; row <= input; row++){  //generates the row
+  let str = "";         // creates an empty string
+  for (let col = 1; col <= input; col++){     //generates columns
+    currentNumber = row * col;    // the number we're currently on, is the the multiple of row and col
+    if (col === 1){     // the column here is one, not row, cuz it will only iterate once
+      str += row + " ";    // we add the number and a space after
+    }else{
+      if (currentNumber < 10){    // here we align single digit numbers with double digits
+        str += " ";
+      }
+      str += currentNumber + " ";   // finally we put the current calculated number and add a space after
+    }
+  }
+  io.write(str);    // print it
+}
+
