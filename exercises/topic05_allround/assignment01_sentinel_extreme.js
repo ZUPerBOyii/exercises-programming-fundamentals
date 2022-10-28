@@ -15,3 +15,29 @@ If no numbers were entered (only zero), you should print two zeros.
 */
 import io from "../../utils/io-for-pf.js";
 
+
+let input = parseInt(io.read());
+let highestNumber = 0;
+let lowestNumber = 0;
+let currentNumber = 0;
+
+let numbers = [];
+
+while (input !== 0){
+  numbers.push(input);
+  input = parseInt(io.read());
+  currentNumber = input;
+}
+
+for (let i = 0; i <= numbers.length; i++){
+  if (numbers[i] <= currentNumber){
+    currentNumber = numbers[i];
+    lowestNumber = currentNumber;
+  }else if (numbers[i] >= currentNumber) {
+    highestNumber = numbers[i];
+  }
+  currentNumber = numbers[i];
+}
+io.write(lowestNumber);
+io.write(highestNumber);
+

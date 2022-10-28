@@ -11,4 +11,18 @@ positive number is entered.
     24
     */
 import io from "../../utils/io-for-pf.js";
+let input = parseInt(io.read());
 
+while (input <= 0){
+  input = parseInt(io.read());
+}
+
+
+if (input === 1){
+  io.write(input);
+}
+
+for (let i = input - 1; i >= 1; i--){
+  input = input * i;
+}
+io.write(input);
