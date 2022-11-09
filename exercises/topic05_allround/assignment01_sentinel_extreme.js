@@ -19,24 +19,22 @@ import io from "../../utils/io-for-pf.js";
 let input = parseInt(io.read());
 let highestNumber = 0;
 let lowestNumber = 0;
-let currentNumber = 0;
-
 let numbers = [];
 
 while (input !== 0){
   numbers.push(input);
   input = parseInt(io.read());
-  currentNumber = input;
 }
 
+lowestNumber = numbers[0];
+highestNumber = numbers[0];
+
 for (let i = 0; i <= numbers.length; i++){
-  if (numbers[i] <= currentNumber){
-    currentNumber = numbers[i];
-    lowestNumber = currentNumber;
-  }else if (numbers[i] >= currentNumber) {
+  if (numbers[i] <= lowestNumber){
+    lowestNumber = numbers[i];
+  }else if (numbers[i] >= highestNumber) {
     highestNumber = numbers[i];
   }
-  currentNumber = numbers[i];
 }
 io.write(lowestNumber);
 io.write(highestNumber);
