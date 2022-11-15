@@ -31,3 +31,4 @@ for (let i = 0; i <= numbers.length; i++){
 }
 io.write(lowestNumber);
 io.write(highestNumber);
+io.write()

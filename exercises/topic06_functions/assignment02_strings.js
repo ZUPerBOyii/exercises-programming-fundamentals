@@ -25,6 +25,8 @@ but should the whitespaces in between.
 
 
 
+
+
 function isWhitespace (ch) {
   return ch === " " || ch === "\t" || ch === "\r" || ch === "\n";
 }
@@ -48,43 +50,54 @@ export {
   isAlpha,
   isInt,
   trim,
-
   substring
 };
 
 
+
 function isDigit(a){
-  a = a / 1;
-
-  if (a !== a){
-    return false;
-  }else{
+  if (char2ascii(a) >= 48 && char2ascii(a) <= 57){
     return true;
+  }else{
+    return false;
   }
-
 }
 
 function toUpper(a){
-  a.toUpperCase();
+  a = a.toUpperCase();
+  return a;
 }
 
-function toLower(){
-
+function toLower(a){
+  a = a.toLowerCase();
+  return a;
 }
 
-function isAlpha(){
-
+function isAlpha(a){
+  //check if it's an alphabetical letter
+  if (char2ascii(a) >= 97 && char2ascii(a) <= 122){
+    return true;
+  }else{
+    return false;
+  }
 }
 
-function isInt(){
-
+function isInt(a){
+  let b = parseInt(a);
+  if (b === a){
+    return true;
+  }else{
+    return false;
+  }
 }
 
-function trim(){
-
+function trim(a){
+  a = a.trim();
+  return a;
 }
 
 function substring(){
+  //get part of the string
 
 }
 
