@@ -96,8 +96,12 @@ function trim(a){
   return a;
 }
 
-function substring(){
+function substring(a, start, end){
   //get part of the string
-
+  if (end === undefined){
+    end = a.length;
+  }
+  a = a.substring(start,end);
+  return a;
 }
 

@@ -18,6 +18,8 @@ the previous exercise the key is to reuse existing functions.
 The exercise here is to write code, not to borrow it.*
 */
 
+import {substring} from "./assignment02_strings.js";
+
 export {
   reverse,
   isPalindrome,
@@ -48,12 +50,27 @@ function  isPalindrome(a){
   }
 }
 
-function substringOfLength(){
+function substringOfLength(a, start){
   // start pos + length
+  let subString;
+  let wordLength = 0;
+
+  subString = (a,start);
+  wordLength = subString.length;
+  return subString + " " + wordLength;
 }
 
-function find(){
+function find(a, word){
   // find substring and give the pos
+  let counter = "";
+  for (let i = 0; i < word.length; i++){
+    for (let j = 0; j < word.length; j++){
+      if (a[i] === word[j]){
+        counter += j;
+      }
+    }
+  }
+  return counter + 1;
 }
 
 function findAll(){
@@ -61,10 +78,29 @@ function findAll(){
 
 }
 
-function replace(){
+function replace(word, a, b){
   // substring replaced by another
+  let originalWord = [];
+  for (let i = 0; i < word.length; i++){
+    originalWord.push(word[i]);
+  }
+  for (let j = 0; j < originalWord.length; j++){
+    if (a === originalWord[j]){
+      originalWord[j] = b;
+    }
+  }
+  let newWord = "";
+  for (let k = 0; k < originalWord.length; k++){
+    newWord += originalWord[k];
+  }
+  return newWord;
 }
 
-function decompose(){
+function decompose(a){
   // get the string and get each letter separately
+  let letters = "";
+  for (let i = 0; i < a.length; i++){
+    letters += a[i] + " ";
+  }
+  return a + " " + letters;
 }

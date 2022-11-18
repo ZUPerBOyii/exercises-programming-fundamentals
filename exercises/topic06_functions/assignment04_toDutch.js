@@ -31,3 +31,7 @@ const SCALES = ["een", "tien", "honderd", "duizend ", " miljoen ",
 
 
 export { toDutch };
+
+function toDutch(){
+  // nothing yet
+}
