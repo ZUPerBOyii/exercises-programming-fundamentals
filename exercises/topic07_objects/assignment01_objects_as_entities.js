@@ -18,4 +18,35 @@ favorite colour of the match seeker.
 
 */
 
+
+
 export {createRGBColor,createPerson, colorDistance, findMatch};
+
+function createRGBColor(a, b, c){
+  const color = {
+    r:a,
+    g:b,
+    b:c
+  };
+  return color;
+}
+
+function createPerson(fname,number,color ){
+  const person = {
+    name: fname,
+    age: number,
+    favoriteColor: color
+  };
+  return person;
+}
+
+function colorDistance(input1, input2){
+  const color1 = {input1};
+  const color2 = {input2};
+
+  let sum = Math.pow((color1.r - color2.r),2) + Math.pow((color1.g - color2.g),2) + Math.pow((color1.b - color2.b),2);
+  return sum;
+}
+
+function findMatch(){
+}
