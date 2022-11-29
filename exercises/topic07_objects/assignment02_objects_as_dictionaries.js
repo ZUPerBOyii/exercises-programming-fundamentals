@@ -17,3 +17,48 @@ we can also use a string as return type. (on an exam it would be your job to ded
 
 
 export {countLetters, orderLettersByFrequency, popMostFrequent};
+
+
+function countLetters(text) {
+  const res = {};
+  for (const ch of text) {
+    if(isAlpha(ch)) {
+      const lowerCase = toLower(ch);
+      if(lowerCase in res)
+        res[lowerCase]++;
+      else
+        res[lowerCase] = 1;
+    }
+  }
+  return res;
+}
+
+function findMostFrequent(frequencies) {
+  let maxFrequency = 0;
+  let mostFrequentChar = "";
+  for (const ch in frequencies) {
+    if(frequencies[ch] > maxFrequency) {
+      mostFrequentChar = ch;
+      maxFrequency = frequencies[mostFrequentChar];
+    }
+  }
+  return mostFrequentChar;
+}
+
+function popMostFrequent(frequencies) { //CQS violation though
+  const mostFrequentChar = findMostFrequent(frequencies);
+  delete frequencies[mostFrequentChar];
+  return mostFrequentChar;
+}
+
+function orderLettersByFrequency(text) {
+  let res = "";
+  const frequencies = countLetters(text);
+  let ch = popMostFrequent(frequencies);
+  while(ch !== "") {
+    res += ch;
+    ch = popMostFrequent(frequencies);
+  }
+  return res;
+}
+

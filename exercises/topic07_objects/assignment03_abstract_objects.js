@@ -16,3 +16,10 @@ values.
 
 
 export {combine, zip};
+function combine() {
+  // nothing yet
+}
+
+function zip() {
+  // nothing yet
+}
