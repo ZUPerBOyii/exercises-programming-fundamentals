@@ -27,3 +27,31 @@ Write a second version `fibFast` that uses a loop rather than recursion.
 
 
 export {fib, fibFast};
+
+let fibCalls = 0;
+
+function fib(n, cache = []) {
+  while(cache.length < n + 1) cache.push(NaN);
+  fibCalls++;
+  if(!isNaN(cache[n])) return cache[n];
+  if(n === 0) return 0;
+  if(n === 1) return 1;
+  const res = fib(n-1, cache) + fib(n-2, cache);
+  cache[n] = res;
+  return res;
+}
+
+function fibX(n) {
+  let fibn_2 = 0;
+  let fibn_1 = 1;
+  let fibn = fibn_1 + fibn_2;
+  while(n>2) {
+    fibn_2 = fibn_1;
+    fibn_1 = fibn;
+    fibn = fibn_1 + fibn_2;
+    n--;
+  }
+  return fibn;
+}
+
+

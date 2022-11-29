@@ -40,13 +40,22 @@ function createPerson(fname,number,color ){
   return person;
 }
 
-function colorDistance(input1, input2){
-  const color1 = {input1};
-  const color2 = {input2};
+function colorDistance(color1, color2){
 
-  let sum = Math.pow((color1.r - color2.r),2) + Math.pow((color1.g - color2.g),2) + Math.pow((color1.b - color2.b),2);
-  return sum;
+  return Math.pow((color1.r - color2.r),2) + Math.pow((color1.g - color2.g),2) + Math.pow((color1.b - color2.b),2);
 }
 
-function findMatch(){
+function peopleDistance(person1, person2){
+  return colorDistance(person1.favoriteColor, person2.favoriteColor);
+}
+
+function findMatch(person, people){
+  let bestMatch = people[0];
+  for (let i = 1; i < people.length; i++){
+    const currentPerson = people[i];
+    if (peopleDistance(person,currentPerson) < peopleDistance(person,bestMatch)){
+      bestMatch = currentPerson;
+    }
+  }
+  return bestMatch;
 }
