@@ -29,3 +29,32 @@ Make sure they are (still) ordered alphabetically.
 
 
 export {findByName, getAge, getOldest};
+
+function findByName(people, name) {
+  for (const person of people) {
+    if(person["name"] === name)
+      return person;
+  }
+  return null;
+}
+
+function getAge(people, name) {
+  const person = findByName(people, name);
+  if(person !== null)
+    return person.age;
+  return undefined;
+}
+
+function getOldest(people) {
+  let res = [];
+  let maxAge = 0;
+  for (const person of people) {
+    if(person.age > maxAge) {
+      res = [];
+      maxAge = person.age;
+    }
+    if(person.age === maxAge)
+      res.push(person);
+  }
+  return res;
+}

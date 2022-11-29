@@ -42,6 +42,32 @@ Make sure the order of entries does not change.
 Keep the general guidelines into account
 (only use studied techniques and mind your coding style).
 */
+function getEntries(log, from ,to) {
+  const res = [];
+  for (let i = from; i < to; i++) {
+    res.push(log[i]);
+  }
+  return res;
+}
 
+function getRecoveredDays(log) {
+  let from = indexOfLastSymptomaticDay(log);
+  if(isNaN(from)) from = log.length;
+  const to = log.length;
+  return getEntries(log, from+1, to);
+}
+
+function getSicknessDays(log) {
+  const from = indexOfFirstSymptomaticDay(log);
+  const to = indexOfLastSymptomaticDay(log);
+  return getEntries(log, from, to+1);
+}
+
+function getIncubationDays(log) {
+  const from = 0;
+  let to = indexOfFirstSymptomaticDay(log);
+  if (isNaN(to)) to = 0;
+  return getEntries(log, from, to);
+}
 
 export {getIncubationDays, getSicknessDays, getRecoveredDays};

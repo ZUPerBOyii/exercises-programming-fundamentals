@@ -41,6 +41,32 @@ Now, also write the two functions `firstSymptomaticDay(logbook)` and
 *Write as little new code as possible (for these last two functions).*
 
 */
+function indexOfFirstSymptomaticDay(log) {
+  for (let i = 0; i < log.length; i++) {
+    if(log[i].symptoms) return i;
+  }
+  return NaN;
+}
+function indexOfLastSymptomaticDay(log) {
+  for (let i = log.length-1; i >= 0; i--) {
+    if(log[i].symptoms) return i;
+  }
+  return NaN;
+}
+function firstSymptomaticDay(log) {
+  const index = indexOfFirstSymptomaticDay(log);
+  if(isNaN(index))
+    return undefined;
+  else
+    return log[index].date;
+}
+function lastSymptomaticDay(log) {
+  const index = indexOfLastSymptomaticDay(log);
+  if(isNaN(index))
+    return undefined;
+  else
+    return log[index].date;
+}
 
 export {
   indexOfFirstSymptomaticDay,

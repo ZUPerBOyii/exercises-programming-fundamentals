@@ -48,4 +48,8 @@ This means  `<`, `==`, `>` can be used to determine order.
 `d1 > d2` is (only) true when `d1` happens after `d2`.
 */
 
+function hadSymptoms(){
+  //nothing yet
+}
+
 export {hadSymptoms};
