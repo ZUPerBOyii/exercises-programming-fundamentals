@@ -48,7 +48,7 @@ function indexOfFirstSymptomaticDay(log) {
   return NaN;
 }
 function indexOfLastSymptomaticDay(log) {
-  for (let i = log.length-1; i >= 0; i--) {
+  for (let i = log.length - 1; i >= 0; i--) {
     if(log[i].symptoms) return i;
   }
   return NaN;

@@ -48,8 +48,25 @@ This means  `<`, `==`, `>` can be used to determine order.
 `d1 > d2` is (only) true when `d1` happens after `d2`.
 */
 
-function hadSymptoms(){
-  //nothing yet
+
+function findEntryByDate(log, date, lo = 0, hi = log.length) {
+  const mid = Math.floor((lo + hi) / 2);
+  if(lo === hi) return null;
+  const entryInTheMiddle = log[mid];
+  if (date < entryInTheMiddle.date) {
+    return findEntryByDate(log, date, lo, mid);
+  } else if (date > entryInTheMiddle.date) {
+    return findEntryByDate(log, date, mid + 1, hi);
+  } else {
+    return entryInTheMiddle;
+  }
 }
+function hadSymptoms(log, date) {
+  const entry = findEntryByDate(log, date);
+  if(entry === null) return undefined;
+  else return entry.symptoms;
+}
+
+
 
 export {hadSymptoms};

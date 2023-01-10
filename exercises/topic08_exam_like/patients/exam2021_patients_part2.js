@@ -54,13 +54,13 @@ function getRecoveredDays(log) {
   let from = indexOfLastSymptomaticDay(log);
   if(isNaN(from)) from = log.length;
   const to = log.length;
-  return getEntries(log, from+1, to);
+  return getEntries(log, from + 1, to);
 }
 
 function getSicknessDays(log) {
   const from = indexOfFirstSymptomaticDay(log);
   const to = indexOfLastSymptomaticDay(log);
-  return getEntries(log, from, to+1);
+  return getEntries(log, from, to + 1);
 }
 
 function getIncubationDays(log) {

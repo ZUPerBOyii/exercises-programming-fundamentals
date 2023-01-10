@@ -46,7 +46,7 @@ function getAge(people, name) {
 }
 
 function getOldest(people) {
-  let res = [];
+  let res = []; // res is result
   let maxAge = 0;
   for (const person of people) {
     if(person.age > maxAge) {
